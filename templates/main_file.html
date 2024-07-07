@@ -1,0 +1,84 @@
+{% extends 'basic.html' %}
+{% block content %}
+<div class="align_1">
+    <div class="money_inline">
+        <h2>WELCOME {{send_name}}</h2>
+        <h1>Total Amount = {{total_money}}$</h1>
+        <div class="alignment">
+            <div class="loan">
+                <ul type="none">
+                    {% for i in range(0, len_loan) %}
+                    {% if loan_money[i] > 0 %}
+                    <li class="loan_debit">{{loan_date[i]}} = {{loan_money[i]}}</li>
+                    {% else %}
+                    <li class="loan_credit">{{loan_date[i]}} = {{loan_money[i]}}</li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="credit">
+                <ul type="none">
+                    {% for i in range(0, len_credit) %}
+                    <li>{{credit_date[i]}} = {{credit_money[i]}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="debit">
+                <ul type="none">
+                    {% for i in range(0, len_debit) %}
+                    <li>{{debit_date[i]}} = {{debit_money[i]}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="align_2">
+        <div class="deposit">
+            <h2>CREDIT (DEPOSIT)</h2>
+            <form method="post" action="{{url_for('deposit_money')}}">
+                <input type="text" name="credit" placeholder="deposit money"><br><br>
+                <button>Enter</button>
+            </form>
+        </div>
+        <div class="withdrawal">
+            <h2>DEBIT (WITHDRAWAL)</h2>
+            <form method="post" action="{{url_for('withdrawal_money')}}">
+                <input type="text" name="debit" placeholder="withdrawal money"><br><br>
+                <button>Enter</button>
+            </form>
+        </div>
+        <div class="deposit">
+            <h2>DEPOSIT LOAN</h2>
+            <form method="post" action="{{url_for('deposit_loan')}}">
+                <input type="text" name="loan_negative" placeholder="deposit loan"><br><br>
+                <button>Enter</button>
+            </form>
+        </div>
+        <div class="withdrawal">
+            <h2>REQUEST LOAN</h2>
+            <form method="post" action="{{url_for('request_loan')}}">
+                <input type="text" name="loan_positive" placeholder="request loan"><br><br>
+                <button>Enter</button>
+            </form>
+        </div>
+        <div class="deposit">
+            <h2>REQUEST HOME LOAN</h2>
+            <form method="post" action="{{url_for('house_loan')}}" enctype="multipart/form-data">
+                <input type="text" name="amount" placeholder="amount"><br><br>
+                <input type="file" name="bathroom" placeholder="bathroom"><br><br>
+                <button>Enter</button>
+                <p>{{loan_status}}</p>
+            </form>
+        </div>
+        <div class="withdrawal">
+            <h2>TRANSFER MONEY</h2>
+            <form method="post" action="{{url_for('transfer_money')}}">
+                <input type="text" name="transfer_amount" placeholder="amount"><br><br>
+                <input type="text" name="person_name" placeholder="Name"><br><br>
+                <input type="password" name="person_pin" placeholder="PIN"><br><br>
+                <button>Enter</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,110 @@
+.white_ {
+padding-top:10px;
+color: white;
+}
+
+.inline_ {
+width:100%;
+height:100px;
+background-color:rgb(105, 105, 105);
+}
+
+.right_ {
+text-align:right;
+margin-top:-20px;
+}
+
+.center_ {
+text-align:center;
+margin-top:-40px;
+}
+
+.image_center {
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-top: 60px;
+}
+
+.create_account_{
+margin-top: 200px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.align_1{
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 10px;
+}
+
+.align_2{
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 10px;
+text-align: center;
+}
+
+.money_inline{
+width:100%;
+}
+
+.money_inline h1{
+text-align:right;
+}
+
+.alignment {
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+}
+
+.box: first-child{
+align-self:center;
+}
+
+.loan {
+text-align:center;
+width:33.33%;
+}
+
+.loan ul .loan_debit {
+background-color: red;
+color: white;
+}
+
+.loan ul .loan_credit {
+background-color: green;
+color: white;
+}
+
+.credit{
+text-align:center;
+width:33.33%;
+}
+
+.credit ul li {
+background-color: green;
+color: white;
+}
+
+.debit{
+text-align:center;
+width:33.33%;
+}
+
+.debit ul li {
+background-color: blue;
+color: white;
+}
+
+.deposit{
+background-color: rgb(15, 242, 75);
+color: white;
+}
+
+.withdrawal{
+background-color: rgb(230, 147, 14);
+color: white;
+}

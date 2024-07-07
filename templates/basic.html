@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Banking Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+    <div class="inline_">
+        <h1 class="white_">BANKING WEBSITE</h1>
+        <div class="center_">
+            <form method="post" action="{{url_for('main_file')}}">
+                <input type="text" placeholder="Name" name="name" />
+                <input type="password" placeholder="pin" name="pin" />
+                <button>LOG IN</button>
+            </form>
+        </div>
+        <div class="right_">
+            <form method="post" action="{{url_for('creation')}}">
+                <input type="text" name="cname" placeholder="Name" />
+                <input type="password" name="cpin" placeholder="create pin" />
+                <input type="password" name="ccpin" placeholder="confirm pin" />
+                <button>REGISTER</button>
+            </form>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

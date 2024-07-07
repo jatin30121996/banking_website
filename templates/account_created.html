@@ -1,0 +1,12 @@
+{% extends 'basic.html' %}
+{% block content %}
+<div class="create_account_">
+    <form method="post" action="{{url_for('create_account')}}">
+        <input type="text" name="aname" placeholder="Name"><br><br>
+        <input type="text" name="apin" placeholder="PIN"><br><br>
+        <input type="text" name="acpin" placeholder="confirm PIN"><br><br>
+        <input type="text" name="aamount" placeholder="Amount"><br><br>
+        <button>Enter</button>
+    </form>
+</div>
+{% endblock %}
